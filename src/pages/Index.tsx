@@ -2,7 +2,6 @@ import Sidebar from "@/components/Sidebar";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ResearchSection from "@/components/sections/ResearchSection";
-import ProjectsSection from "@/components/sections/ProjectsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import EducationSection from "@/components/sections/EducationSection";
 import SkillsSection from "@/components/sections/SkillsSection";
@@ -17,12 +16,11 @@ const Index = () => (
       <HeroSection />
       <AboutSection />
       <ResearchSection />
-      <ProjectsSection />
       <ExperienceSection />
       <EducationSection />
-      <SkillsSection />
       <TalksSection />
       <AwardsSection />
+      <SkillsSection />
       <ContactSection />
     </main>
   </>
