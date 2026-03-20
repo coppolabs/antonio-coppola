@@ -17,7 +17,7 @@ const HeroSection = () => (
             Antonio Coppola
           </h1>
           <p className="text-lg text-meta mt-2 font-sans">
-            Ph.D Student at the Technical University of Munich
+            Optimization & Machine Learning for Mobility Systems
           </p>
           <p className="text-primary font-sans font-medium mt-3 text-base">
             Learning-augmented optimization for large-scale mobility systems.

@@ -14,7 +14,9 @@ const ContactSection = () => (
     <SectionTitle>Contact</SectionTitle>
     <p className="text-foreground/70 font-sans mb-6">
       I welcome opportunities for collaboration, research discussions, and industry roles.
-      Feel free to reach out regarding projects, positions, or general inquiries.
+      <br />
+      Feel free to reach out regarding projects, positions, or just for a chat.
+      <br />
     </p>
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {links.map((link) => (

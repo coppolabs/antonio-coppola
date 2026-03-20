@@ -9,25 +9,34 @@ const education = [
     institution:
       "TUM School of Management, Technical University of Munich",
     dates: "2022 – 2026",
-    details: "Professorship for Business Analytics and Intelligent Systems",
+    details: (
+      <>
+        Professorship for Business Analytics and Intelligent Systems
+        <br />
+        Thesis: “Balanced and Staggered Routing in AMoD Systems”
+      </>
+    ),
   },
   {
-    degree: "M.Sc. in Industrial Engineering",
+    degree: "B.Sc. & M.Sc. in Industrial Engineering",
     institution:
       "Università degli Studi di Napoli Federico II, Naples, Italy",
-    dates: "Mar 2021",
-  },
-  {
-    degree: "B.Sc. in Industrial Engineering",
-    institution:
-      "Università degli Studi di Napoli Federico II, Naples, Italy",
-    dates: "Jan 2018",
+    dates: "2014 – 2021",
+    details: (
+      <>
+        Graduated with highest distinction (110/110 cum laude with special mention for academic excellence)
+        <br />
+        Thesis: “Reconstructing the Connectivity of a Network Diffusion Process from Temporal Traces”
+      </>
+    ),
   },
   {
     degree: "EsaBac – Italian–French Dual Diploma",
     institution:
       "Liceo Classico Europeo, Convitto Nazionale “Vittorio Emanuele II”, Naples, Italy",
-    dates: "Jul 2014",
+    dates: "2009 – 2014",
+    details:
+      "Completed a bilingual program awarding both the Italian Esame di Stato and the French Baccalauréat.",
   },
 ];
 

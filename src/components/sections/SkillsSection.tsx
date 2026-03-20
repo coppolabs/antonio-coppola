@@ -4,11 +4,11 @@ import SectionTitle from "@/components/SectionTitle";
 const skillGroups = [
   {
     category: "Programming",
-    skills: ["Python", "Julia", "C++"],
+    skills: ["Python", "Julia", "C++", "TypeScript"],
   },
   {
     category: "Tools",
-    skills: ["Git", "Docker", "LaTeX", "Microsoft Office"],
+    skills: ["Git", "Docker", "LaTeX", "Microsoft Office", "React"],
   },
   {
     category: "Optimization & OR",
