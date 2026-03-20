@@ -46,17 +46,16 @@ const EducationSection = () => (
 
     <div className="mt-6 space-y-8">
       {education.map((ed, i) => (
-        <div
-          key={i}
-          className="grid grid-cols-[auto_1fr_auto] gap-4 items-start"
-        >
-          {/* Icon */}
-          <div className="mt-1 p-2 rounded-lg bg-primary/10 text-primary">
+        <div key={i} className="flex items-start gap-4">
+          <div className="mt-1 p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
             <GraduationCap size={20} />
           </div>
 
-          {/* Main content */}
-          <div>
+          <div className="flex-1">
+            <p className="text-xs font-sans uppercase tracking-wider text-foreground/50 mb-1">
+              {ed.dates}
+            </p>
+
             <h4 className="font-sans font-semibold text-foreground text-base leading-snug">
               {ed.degree}
             </h4>
@@ -66,15 +65,10 @@ const EducationSection = () => (
             </p>
 
             {ed.details && (
-              <p className="text-sm text-foreground/70 font-sans mt-1">
+              <p className="text-sm text-foreground/70 font-sans mt-1 leading-relaxed">
                 {ed.details}
               </p>
             )}
-          </div>
-
-          {/* Date (right aligned column) */}
-          <div className="text-sm text-meta font-sans whitespace-nowrap pt-1">
-            {ed.dates}
           </div>
         </div>
       ))}

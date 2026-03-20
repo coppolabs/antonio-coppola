@@ -19,11 +19,10 @@ const experiences = [
     ),
     dates: "2022 – Present",
     bullets: [
-      "Research spatiotemporal coordination strategies for autonomous mobility-on-demand systems, with a focus on balanced and staggered routing for congestion mitigation and efficient fleet operations.",
-      "Develop optimization- and learning-based methods for congestion-aware routing in robotaxi systems, resulting in publications in leading specialized journals, including the European Journal of Operational Research (EJOR).",
-      "Designed and implemented large-scale experimental pipelines in Julia and Python, including HPC-based simulations, training workflows, and data analysis.",
-      "Teaching Assistant for 'Modeling Future Mobility Systems', guiding student teams in developing solutions to complex transportation problems.",
-      "Supervised multiple Master’s theses on extensions of routing and optimization models.",
+      "Develop optimization and learning-augmented methods for spatiotemporal coordination in autonomous mobility-on-demand systems, combining mathematical programming, metaheuristics, and machine learning, with a focus on balanced and staggered routing for congestion mitigation.",
+      "Designed and implemented large-scale experimental pipelines (Julia/Python/C++) to train, evaluate, and validate these methods, supporting publications in leading operations research journals.",
+      "Teaching Assistant, guiding student teams in developing solutions to complex transportation problems.",
+      "Supervised several Master’s theses on extensions of routing and optimization models.",
       "Presented research at international conferences, including TSL 2023 in Chicago."
     ]
   },
@@ -44,8 +43,9 @@ const experiences = [
     ),
     dates: "2025",
     bullets: [
-      "Conducted collaborative research on transportation optimization within one of the leading operations research groups in the field.",
-      "Strengthened international research collaborations and expanded academic exchange on large-scale mobility and routing problems."
+      "Conducted collaborative research on large-scale transportation optimization within a leading OR group.",
+      "Presented at international conferences and participated in local seminars.",
+      "Expanded international collaborations within the operations research community."
     ]
   },
   {
@@ -55,8 +55,7 @@ const experiences = [
     bullets: [
       "Implemented and evaluated algorithms for real-time semi-flexible bus routing using real-world mobility data.",
       "Designed and conducted large-scale experiments to assess system performance under dynamic demand.",
-      "Participated in field trials, collecting and processing GPS data to evaluate operational outcomes.",
-      "Performed data cleaning and analysis to derive insights from real-world deployment."
+      "Participated in field trials, collecting and processing GPS data to evaluate operational outcomes."
     ]
   },
   {
@@ -89,11 +88,17 @@ const ExperienceSection = () => (
       {experiences.map((exp, i) => (
         <div key={i} className="relative pl-6 border-l-2 border-border">
           <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary" />
+          <p className="text-xs font-sans uppercase tracking-wider text-foreground/50 mb-1">
+            {exp.dates}
+          </p>
+
           <h4 className="font-sans text-justify font-semibold text-foreground">
             {exp.position}
           </h4>
-          <p className="text-sm text-meta font-sans text-justify">{exp.org}</p>
-          <p className="text-xs text-meta font-sans text-justify mb-2">{exp.dates}</p>
+
+          <p className="text-sm text-meta/80 font-sans text-justify mb-2">
+            {exp.org}
+          </p>
           <ul className="space-y-1">
             {exp.bullets.map((b, j) => (
               <li
