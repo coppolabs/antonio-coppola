@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail, Linkedin, Github, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const links = [
+  { label: "Email", href: "mailto:antonio.coppola@tum.de", icon: <Mail size={18} /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/antoniocoppola364/", icon: <Linkedin size={18} /> },
+  { label: "Google Scholar", href: "https://scholar.google.de/citations?user=43663d0AAAAJ&hl=it", icon: <GraduationCap size={18} /> },
+  { label: "GitHub", href: "https://github.com/coppolabs", icon: <Github size={18} /> },
+];
 
 const navItems = [
   { label: "Home", href: "/#hero" },
@@ -12,7 +18,6 @@ const navItems = [
   { label: "Talks", href: "/#talks" },
   { label: "Awards", href: "/#awards" },
   { label: "Skills", href: "/#skills" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 const Sidebar = () => {
@@ -43,8 +48,28 @@ const Sidebar = () => {
           } lg:translate-x-0`}
       >
         <div className="mb-10">
-          <h2 className="text-xl font-serif font-bold text-foreground">Antonio Coppola</h2>
-          <p className="text-sm text-meta mt-1">Researcher in OR & ML</p>
+          <h2 className="text-xl font-serif font-bold text-foreground">
+            Antonio Coppola
+          </h2>
+          <p className="text-sm text-meta mt-1">
+            Researcher in OR & ML
+          </p>
+
+          {/* Social icons */}
+          <div className="flex items-center gap-3 mt-4">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={link.label}
+                className="text-foreground/60 hover:text-primary transition-colors p-1.5 rounded hover:bg-primary/5"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
         <nav className="flex flex-col gap-1 flex-1">
           {navItems.map((item) => (

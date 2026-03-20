@@ -10,7 +10,7 @@ const HeroSection = () => (
         <img
           src={profileImg}
           alt="Profile photo"
-          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary/20 flex-shrink-0"
+          className="mt-20 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary/20 flex-shrink-0"
         />
         <div className="flex-1">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
@@ -28,9 +28,13 @@ const HeroSection = () => (
           <p className="text-foreground/80 font-sans mt-4 leading-[1.65] max-w-2xl text-justify">
             I am a researcher in operations research and machine learning, currently completing my Ph.D. at the
             Technical University of Munich. My work lies at the intersection of combinatorial optimization, data-driven
-            decision-making, and dynamic routing, with a particular focus on autonomous mobility-on-demand systems.
+            decision-making, and dynamic routing, with a particular focus on autonomous mobility.
             I develop scalable methods that anticipate congestion, coordinate decisions over space and time, and bring
             together algorithmic rigor and practical relevance for complex transportation systems.
+            <br></br>
+            <br></br>
+            I welcome opportunities for collaboration, research discussions, and industry roles.
+            Feel free to reach out regarding projects, positions, or just for a chat.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8">
