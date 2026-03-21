@@ -5,14 +5,14 @@ interface SectionWrapperProps {
   id: string;
   children: ReactNode;
   className?: string;
-  surface?: boolean;
+  variant?: "default" | "band";
 }
 
 const SectionWrapper = ({
   id,
   children,
   className = "",
-  surface = false,
+  variant = "default",
 }: SectionWrapperProps) => (
   <motion.section
     id={id}
@@ -20,9 +20,9 @@ const SectionWrapper = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.4, ease: "easeOut" }}
-    className={`py-10 md:py-14 px-6 md:px-12 ${surface ? "bg-surface" : ""} ${className}`}
+    className={`scroll-mt-10 ${variant === "band" ? "bg-muted/5" : ""} ${className}`}
   >
-    <div className="max-w-3xl">
+    <div className="max-w-5xl mx-auto px-6 md:px-12 py-10 md:py-14">
       {children}
     </div>
   </motion.section>

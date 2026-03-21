@@ -40,31 +40,36 @@ const skillGroups = [
 ];
 
 const SkillsSection = () => (
-  <SectionWrapper id="skills" surface>
-    <SectionTitle>Skills</SectionTitle>
+  <SectionWrapper id="skills" variant="band" className="pb-20">
+    <div className="-mt-8">
+      <SectionTitle>Skills</SectionTitle>
+    </div>
 
-    <div className="mt-6 space-y-5">
-      {skillGroups.map((group) => (
-        <div
-          key={group.category}
-          className="grid grid-cols-[180px_1fr] gap-x-6 items-start"
-        >
-          <h4 className="text-sm font-sans font-semibold text-foreground pt-1">
-            {group.category}
-          </h4>
+    {/* NEW: pull content up */}
+    <div className="-mt-6">
+      <div className="mt-12 mb-6 space-y-5">
+        {skillGroups.map((group) => (
+          <div
+            key={group.category}
+            className="grid grid-cols-[180px_1fr] gap-x-6 items-start"
+          >
+            <h4 className="text-sm font-sans font-semibold text-foreground pt-1">
+              {group.category}
+            </h4>
 
-          <div className="flex flex-wrap gap-2">
-            {group.skills.map((skill) => (
-              <span
-                key={skill}
-                className="px-2.5 py-1 text-[13px] font-sans rounded-md border border-border bg-surface text-foreground"
-              >
-                {skill}
-              </span>
-            ))}
+            <div className="flex flex-wrap gap-2">
+              {group.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-2.5 py-1 text-[13px] font-sans rounded-md border border-border bg-surface text-foreground"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </SectionWrapper>
 );

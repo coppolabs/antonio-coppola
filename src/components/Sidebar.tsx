@@ -20,43 +20,40 @@ const navItems = [
   { label: "Skills", href: "/#skills" },
 ];
 
-const Sidebar = () => {
+const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
-      {/* Mobile header */}
-      <button
-        onClick={() => setMobileOpen(!mobileOpen)}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-md bg-surface border border-border"
-        aria-label="Toggle menu"
-      >
-        {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-      </button>
+      {/* Top bar */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-surface border-b border-border">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-      {/* Overlay */}
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-30 bg-foreground/20 lg:hidden"
-          onClick={() => setMobileOpen(false)}
-        />
-      )}
+          {/* Left: Name */}
+          <div>
+            <h2 className="text-lg font-serif font-bold text-foreground">
+              Antonio Coppola
+            </h2>
+            <p className="text-xs text-meta">
+              Researcher in OR & ML
+            </p>
+          </div>
 
-      {/* Sidebar */}
-      <aside
-        className={`fixed top-0 left-0 z-40 h-full w-64 bg-surface border-r border-border flex flex-col py-10 px-6 transition-transform duration-200 ${mobileOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:translate-x-0`}
-      >
-        <div className="mb-10">
-          <h2 className="text-xl font-serif font-bold text-foreground">
-            Antonio Coppola
-          </h2>
-          <p className="text-sm text-meta mt-1">
-            Researcher in OR & ML
-          </p>
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm text-foreground/80 hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
 
-          {/* Social icons */}
-          <div className="flex items-center gap-3 mt-4">
+          {/* Right: Socials */}
+          <div className="hidden lg:flex items-center gap-3">
             {links.map((link) => (
               <a
                 key={link.label}
@@ -70,29 +67,51 @@ const Sidebar = () => {
               </a>
             ))}
           </div>
+
+          {/* Mobile button */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden p-2 rounded-md"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-        <nav className="flex flex-col gap-1 flex-1">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className="px-3 py-2 rounded-md text-sm font-sans text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <div className="pt-6 border-t border-border text-xs text-meta">
-          <p>© 2026 Antonio Coppola</p>
-          <p className="mt-1">
-            <Link to="/privacy" className="hover:underline">Privacy Policy</Link> |{" "}
-            <Link to="/impressum" className="hover:underline">Impressum</Link>
-          </p>
+      </header>
+
+      {/* Mobile dropdown */}
+      {mobileOpen && (
+        <div className="fixed top-[72px] left-0 w-full bg-surface border-b border-border z-40 px-6 py-4 flex flex-col gap-4 lg:hidden">
+
+          <nav className="flex flex-col gap-2">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-sm text-foreground/80 hover:text-primary"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex gap-3 pt-2 border-t border-border">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/60 hover:text-primary"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
-      </aside>
+      )}
     </>
   );
 };
 
-export default Sidebar;
+export default Navbar;

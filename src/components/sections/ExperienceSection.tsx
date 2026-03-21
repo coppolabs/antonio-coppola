@@ -82,7 +82,7 @@ const experiences = [
 ];
 
 const ExperienceSection = () => (
-  <SectionWrapper id="experience" surface>
+  <SectionWrapper id="experience" variant="band">
     <SectionTitle>Experience</SectionTitle>
     <div className="space-y-8">
       {experiences.map((exp, i) => (

@@ -13,7 +13,7 @@ const interests = [
 ];
 
 const AboutSection = () => (
-  <SectionWrapper id="about" surface>
+  <SectionWrapper id="about" variant="band">
     <SectionTitle>About Me</SectionTitle>
 
     <div className="">

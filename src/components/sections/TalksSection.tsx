@@ -42,7 +42,7 @@ const talks = [
 ];
 
 const TalksSection = () => (
-  <SectionWrapper id="talks" surface>
+  <SectionWrapper id="talks" variant="band">
     <SectionTitle>Talks & Posters</SectionTitle>
     <div className="space-y-4">
       {talks.map((talk, i) => {

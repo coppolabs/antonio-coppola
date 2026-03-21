@@ -4,14 +4,18 @@ import profileImg from "@/assets/profile.jpeg";
 import cvFile from "@/assets/AC_CV.pdf";
 
 const HeroSection = () => (
-  <section id="hero" className="min-h-screen flex items-center px-6 md:px-12 py-20">
-    <div className="max-w-4xl w-full">
+  <section
+    id="hero"
+    className="scroll-mt-28 -mt-20 -mb-5 min-h-screen flex items-center py-20"
+  >
+    <div className="max-w-5xl mx-auto w-full px-6 md:px-12">
       <div className="flex flex-col md:flex-row items-start gap-10">
         <img
           src={profileImg}
           alt="Profile photo"
           className="mt-20 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary/20 flex-shrink-0"
         />
+
         <div className="flex-1">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
             Antonio Coppola
@@ -31,13 +35,12 @@ const HeroSection = () => (
             decision-making, and dynamic routing, with a particular focus on autonomous mobility.
             I develop scalable methods that anticipate congestion, coordinate decisions over space and time, and bring
             together algorithmic rigor and practical relevance for complex transportation systems.
-            <br></br>
-            <br></br>
+            <br />
             I welcome opportunities for collaboration, research discussions, and industry roles.
             Feel free to reach out regarding projects, positions, or just for a chat.
           </p>
 
-          <div className="flex flex-wrap gap-3 mt-8">
+          <div className="flex flex-wrap gap-3 mt-4">
             <a href={cvFile} download>
               <Button
                 variant="outline"
