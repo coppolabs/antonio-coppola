@@ -19,7 +19,6 @@ const navItems = [
   { label: "Awards", href: "/#awards" },
   { label: "Skills", href: "/#skills" },
 ];
-
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -27,9 +26,9 @@ const Navbar = () => {
     <>
       {/* Top bar */}
       <header className="fixed top-0 left-0 w-full z-50 bg-surface border-b border-border">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* max-w-5xl: The "sweet spot" between too wide and too squeezed */}
+        <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
 
-          {/* Left: Name */}
           {/* Left: Name */}
           <div>
             <h2 className="text-xl font-serif font-bold tracking-tight text-foreground">
@@ -53,16 +52,23 @@ const Navbar = () => {
           {/* Right: Socials */}
           <div className="hidden lg:flex items-center gap-3">
             {links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={link.label}
-                className="text-foreground/60 hover:text-primary transition-colors p-1.5 rounded hover:bg-primary/5"
-              >
-                {link.icon}
-              </a>
+              <div key={link.label} className="relative group flex justify-center">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/60 hover:text-primary transition-colors p-1.5 rounded hover:bg-primary/5 flex items-center justify-center"
+                >
+                  {link.icon}
+                </a>
+
+                {/* Cute box: top-full mt-1 keeps it snug below */}
+                <div className="absolute top-full mt-1.5 px-2 py-1 bg-foreground text-background text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 shadow-sm">
+                  {link.label}
+                  {/* Arrow pointing up */}
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-foreground"></div>
+                </div>
+              </div>
             ))}
           </div>
 
@@ -79,7 +85,6 @@ const Navbar = () => {
       {/* Mobile dropdown */}
       {mobileOpen && (
         <div className="fixed top-[72px] left-0 w-full bg-surface border-b border-border z-40 px-6 py-4 flex flex-col gap-4 lg:hidden">
-
           <nav className="flex flex-col gap-2">
             {navItems.map((item) => (
               <a
@@ -93,16 +98,17 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="flex gap-3 pt-2 border-t border-border">
+          <div className="flex gap-4 pt-4 border-t border-border">
             {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-primary"
+                className="text-foreground/60 hover:text-primary flex items-center gap-2"
               >
                 {link.icon}
+                <span className="text-xs">{link.label}</span>
               </a>
             ))}
           </div>

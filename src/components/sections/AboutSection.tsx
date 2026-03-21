@@ -28,7 +28,7 @@ const AboutSection = () => (
         </p>
 
         <p>
-          I began my academic journey in Naples, where I studied industrial engineering and worked on control of complex networked systems under the supervision of{" "}
+          I began my academic journey in Naples, where I studied industrial engineering and worked as a research assistant on the control of complex networks under the supervision of{" "}
           <a
             href="https://scholar.google.de/citations?hl=it&user=xO0lRJIAAAAJ"
             target="_blank"
@@ -36,8 +36,7 @@ const AboutSection = () => (
             className="underline underline-offset-2"
           >
             Prof. Franco Garofalo
-          </a>.
-          {" "}I then moved to Germany to pursue a Ph.D. at TUM under{" "}
+          </a>. I then moved to Germany to pursue a Ph.D. at TUM under{" "}
           <a
             href="https://scholar.google.de/citations?user=umGuS18AAAAJ&hl=it&oi=ao"
             target="_blank"
@@ -45,11 +44,11 @@ const AboutSection = () => (
             className="underline underline-offset-2"
           >
             Prof. Maximilian Schiffer
-          </a>, shifting my focus toward operations research and mobility systems. This led me to develop optimization models for large-scale transportation systems, and ultimately to integrate learning-based approaches for decision-making under uncertainty.
+          </a>'s supervision, where I shifted my focus toward operations research and mobility systems.
         </p>
 
         <p>
-          Through my work, I engaged with the international operations research community, presenting at major conferences. This path brought me to Montréal, where I visited Polytechnique Montréal and worked with{" "}
+          During my graduate studies, I became actively involved in the international OR community, presenting my work at major conferences and publishing in leading journals. I also worked as a visiting researcher at Polytechnique Montréal, where I collaborated with{" "}
           <a
             href="https://scholar.google.de/citations?hl=it&user=CilK624AAAAJ"
             target="_blank"
@@ -57,11 +56,12 @@ const AboutSection = () => (
             className="underline underline-offset-2"
           >
             Prof. Michel Gendreau
-          </a> on transportation optimization, further strengthening my perspective on large-scale mobility systems.
+          </a>{" "}
+          on transportation optimization, further broadening my perspective on large-scale mobility systems. In parallel, I have been engaged in teaching and thesis supervision, as well as collaborating with industry partners on real-world mobility applications.
         </p>
 
         <p>
-          More broadly, I am interested in how intelligent decision systems can improve the efficiency and sustainability of complex infrastructures. I enjoy building end-to-end systems—from modeling and algorithm design to experimentation and visualization—that make these ideas concrete and impactful.
+          More broadly, I am interested in designing intelligent decision systems that improve the efficiency and sustainability of complex infrastructures and generate tangible societal impact. I enjoy developing end-to-end frameworks, from modeling and algorithm design to experimentation and evaluation, that enable coordinated, scalable, and practically deployable solutions in complex transportation systems.
         </p>
       </div>
     </div>
@@ -87,7 +87,7 @@ const AboutSection = () => (
         Fun fact
       </p>
       <p className="text-sm text-foreground/70 font-sans italic">
-        Outside research, I am the frontman of a rock band.
+        Outside research, I am the frontman of a rock band, where I explore a more creative and expressive side of my personality.
         <br></br>
         I truly enjoy the process of writing music, performing and connecting with audiences.
       </p>
