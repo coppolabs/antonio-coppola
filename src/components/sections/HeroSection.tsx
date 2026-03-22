@@ -6,21 +6,19 @@ import cvFile from "@/assets/AC_CV.pdf";
 const HeroSection = () => (
   <section
     id="hero"
-    /* Adjusted: pb-10 (mobile) vs pb-20 (desktop) to tighten the gap */
-    className="scroll-mt-28 -mt-20 min-h-[80vh] flex items-center pt-20 pb-10 md:pb-20"
+    /* Reduced bottom padding on mobile (pb-8) vs desktop (md:pb-20) */
+    className="scroll-mt-28 -mt-20 min-h-[80vh] flex items-center pt-20 pb-8 md:pb-20"
   >
     <div className="max-w-4xl mx-auto w-full px-6 md:px-12">
       <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-14">
 
-        {/* Profile Image - Slightly bigger size and tighter zoom */}
+        {/* Profile Image - Reverted to your original smaller size */}
         <div className="flex-shrink-0">
-          <div className="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary/10 shadow-xl">
-            <img
-              src={profileImg}
-              alt="Antonio Coppola"
-              className="w-full h-full object-cover scale-110"
-            />
-          </div>
+          <img
+            src={profileImg}
+            alt="Antonio Coppola"
+            className="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-primary/10 shadow-xl"
+          />
         </div>
 
         {/* Text Content */}
