@@ -1,6 +1,6 @@
 import { FileDown, Mail, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImg from "@/assets/profile.jpeg";
+import profileImg from "@/assets/profile.png";
 import cvFile from "@/assets/AC_CV.pdf";
 
 const HeroSection = () => (
