@@ -5,6 +5,7 @@ import { FileText, Code, ExternalLink, ChevronDown, ChevronUp } from "lucide-rea
 import StaggeredRouting from "@/assets/papers/staggered_routing.pdf";
 import IntegBalStag from "@/assets/papers/integ_bal_stag_arxiv.pdf";
 import LCSS21Unilaral from "@/assets/papers/LCSS_21_unilateral.pdf";
+import flowVideo from "@/assets/manhattan_flow.mp4";
 
 interface Publication {
   title: string;
@@ -147,6 +148,44 @@ const ResearchSection = () => (
       ))}
     </div>
 
+    <div className="md:hidden -mt-10 mb-10">
+      <div className="overflow-hidden rounded-xl border border-primary/10 shadow-sm bg-muted/20 p-1">
+        <div className="group relative aspect-[16/9] overflow-hidden rounded-lg grayscale transition-all duration-500 hover:grayscale-0 active:grayscale-0">
+          <video
+            src={flowVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover scale-110"
+          />
+
+          <div className="absolute bottom-1.5 right-1.5 px-1.5 py-1 bg-background/80 backdrop-blur-[1px] rounded-lg border border-border/40 z-10 flex flex-col gap-0.5 font-sans">
+            {[
+              { color: "bg-orange-400", label: "passenger" },
+              { color: "bg-blue-600", label: "pickup" },
+              { color: "bg-green-600", label: "rebalancing" },
+              { color: "bg-red-500", label: "idle" },
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center gap-1.5 leading-none">
+                <span className={`w-1.5 h-1.5 rounded-full ${item.color} flex-shrink-0`} />
+                <span className="text-[8px] text-foreground/90 font-medium tracking-tight">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="py-1.5 mt-1">
+          <p className="text-[9px] uppercase tracking-[0.15em] text-center text-foreground/40 font-sans font-bold">
+            Manhattan Flow Simulation
+          </p>
+        </div>
+      </div>
+    </div>
+
+
     <h3 className="text-sm font-sans font-semibold text-meta uppercase tracking-wider mb-2">
       Working Papers & Preprints
     </h3>
@@ -155,6 +194,8 @@ const ResearchSection = () => (
         <PublicationItem key={pub.title} pub={pub} />
       ))}
     </div>
+
+
   </SectionWrapper>
 );
 

@@ -52,11 +52,11 @@ const AboutSection = () => (
 
       {/* Right Column: Visualization */}
       {/* Right Column: Visualization */}
-      <div className="w-full md:w-56 flex-shrink-0 self-start">
+      <div className="hidden md:block w-full md:w-56 flex-shrink-0 self-start">
         <div className="overflow-hidden rounded-xl border border-primary/10 shadow-md bg-muted/20 p-1.5">
           <div className="group grayscale hover:grayscale-0 transition-all duration-700">
             {/* Use relative positioning for the legend overlay */}
-            <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
+            <div className="relative aspect-[16/9] md:aspect-[3/4] overflow-hidden rounded-lg">
               <video
                 src={flowVideo}
                 autoPlay
