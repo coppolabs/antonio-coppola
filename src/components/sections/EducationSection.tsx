@@ -12,17 +12,23 @@ const education = [
     details: "Thesis: “Balanced and Staggered Routing in Autonomous Mobility-on-Demand Systems”",
   },
   {
-    degree: "B.Sc. & M.Sc. in Industrial Engineering",
+    degree: "B.Sc. & M.Sc. in Industrial Engineering (110/110 cum laude)",
     institution: "**University of Naples Federico II**, Italy",
     dates: "2014 – 2021",
-    details: "Graduated with highest distinction (110/110 cum laude) and special mention",
+    details: "Thesis: “Reconstruction of the Connectivity of Diffusion Network Processes from Temporal Traces”",
+  },
+  {
+    degree: "Erasmus+ Exchange Program",
+    institution: "**Universidade do Minho**, Portugal",
+    dates: "2019",
+    details: "Completed an exchange semester in Industrial Engineering with coursework conducted in Portuguese",
   },
   {
     degree: "EsaBac – Italian–French Dual Diploma",
     institution: "**Liceo Classico Europeo**, Naples, Italy",
     dates: "2009 – 2014",
     details: "Bilingual curriculum awarding both Italian and French diplomas",
-  }
+  },
 ];
 
 const EducationSection = () => (
