@@ -12,9 +12,9 @@ const Index = () => (
   <main className="pt-24 min-h-screen bg-surface">
     <HeroSection />
     <AboutSection />
-    <ResearchSection />
     <ExperienceSection />
     <EducationSection />
+    <ResearchSection />
     <TalksSection />
     <AwardsSection />
     <SkillsSection />

@@ -3,82 +3,98 @@ import SectionTitle from "@/components/SectionTitle";
 
 const experiences = [
   {
-    position: "Research Associate",
+    position: "Optimization Engineer — Combinatorial Optimization & ML (Ph.D. Candidate, Mobility AI)",
     org: (
       <>
         Technical University of Munich • Supervised by{" "}
-        <a href="https://scholar.google.com/citations?user=umGuS18AAAAJ&hl=en" className="underline underline-offset-2 hover:text-primary transition-colors">
+        <a
+          href="https://scholar.google.com/citations?user=umGuS18AAAAJ&hl=en"
+          className="underline underline-offset-2 hover:text-primary transition-colors"
+        >
           Prof. Maximilian Schiffer
         </a>
       </>
     ),
     dates: "2022 – 2026",
     details: [
-      "Conduct large-scale, data-driven experiments on real-world transportation networks using empirical taxi demand data",
-      "Develop learning-augmented optimization methods for congestion-aware routing under uncertainty",
-      "Build scalable experimental pipelines for simulation, evaluation, and visualization",
-      "Publish in leading operations research journals and present at international conferences across Europe and North America",
-      "Supervise Master's theses and contribute to teaching"
+      "Designed and implemented simulation frameworks for congestion-aware autonomous mobility-on-demand (AMoD) systems",
+      "Developed scalable optimization solvers combining matheuristics, metaheuristics, and ML-guided components (GLMs, MLPs, GNNs)",
+      "Conducted large-scale experiments on real-world transportation networks using empirical demand data",
+      "Achieved up to 35% reduction in congestion delays under realistic urban mobility scenarios",
+      "Built end-to-end pipelines for simulation, optimization, and visualization in Python, Julia, and C++ with CI/CD workflows",
+      "Published in leading operations research journals; multiple manuscripts under review",
+      "Supervised Master’s theses and contributed to teaching activities",
+      "Collaborated across international research groups (TUM, Polytechnique Montréal, Imperial College London)"
     ]
   },
   {
-    position: "Visiting Researcher",
+    position: "Research Engineer — Large-Scale Transportation Optimization",
     org: (
       <>
         Polytechnique Montréal • Hosted by{" "}
-        <a href="https://scholar.google.com/citations?user=CilK624AAAAJ&hl=en" className="underline underline-offset-2 hover:text-primary transition-colors">
+        <a
+          href="https://scholar.google.com/citations?user=CilK624AAAAJ&hl=en"
+          className="underline underline-offset-2 hover:text-primary transition-colors"
+        >
           Prof. Michel Gendreau
         </a>
       </>
     ),
     dates: "2025",
     details: [
-      "Collaborated on large-scale transportation optimization problems and metaheuristic design",
-      "Contributed to international research collaborations across multiple operations research domains"
+      "Collaborated with a world-leading researcher in transportation science on large-scale optimization and metaheuristic design",
+      "Implemented and benchmarked state-of-the-art large neighborhood search (LNS) algorithms for vehicle routing problems",
+      "Contributed to international operations research collaborations, including conference presentations and academic reading groups",
+      "Produced technical reports and presentations translating complex optimization results for both academic and applied audiences"
     ]
   },
   {
-    position: "Research Engineer",
+    position: "Software Engineer — Transit Optimization & Field Deployment",
     org: (
       <>
-        <a href="https://mcube-cluster.de/en/projekt/steam/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary transition-colors">
+        <a
+          href="https://mcube-cluster.de/en/projekt/steam/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-primary transition-colors"
+        >
           STEAM Project
         </a>{" "}
-        • Part of the{" "}
-        <a href="https://mcube-cluster.de/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary transition-colors">
-          MCube Cluster
-        </a>
+        • MCube Cluster
       </>
     ),
     dates: "2024",
     details: [
-      "Developed optimization methods for designing semi-flexible transit routes",
-      "Validated the approach through real-world experiments, reducing passenger waiting times and walking distances",
-      "Conducted a field study with a user-facing booking platform, collecting and analyzing GPS telemetry data",
-      "Identified and quantified inefficiencies in fixed-route transit systems using empirical mobility data"
+      "Led development of a semi-flexible transit optimization system from algorithm design to field deployment",
+      "Designed demand-responsive scheduling algorithms improving passenger walking distance and vehicle occupancy",
+      "Executed a large-scale mobility experiment, collecting and analyzing GPS telemetry and user interaction data",
+      "Translated operational constraints from industry partners (BMW, SWM, MAN) into optimization models and deployable solutions"
     ]
   },
   {
-    position: "Research Assistant",
+    position: "Engineering Intern — Network Dynamical Systems",
     org: (
       <>
         University of Naples Federico II • Supervised by{" "}
-        <a href="https://scholar.google.com/citations?user=xO0lRJIAAAAJ&hl=it" className="underline underline-offset-2 hover:text-primary transition-colors">
+        <a
+          href="https://scholar.google.com/citations?user=xO0lRJIAAAAJ&hl=it"
+          className="underline underline-offset-2 hover:text-primary transition-colors"
+        >
           Prof. Franco Garofalo
         </a>
       </>
     ),
     dates: "2021",
     details: [
-      "Studied the controllability of complex network dynamical systems",
-      "Co-authored publication in IEEE Control Systems Letters"
+      "Studied controllability properties of complex network dynamical systems",
+      "Co-authored peer-reviewed publication in IEEE Control Systems Letters"
     ]
   }
 ];
 
 const ExperienceSection = () => (
   <SectionWrapper id="experience" variant="band">
-    <SectionTitle>Experience</SectionTitle>
+    <SectionTitle>Working Experience</SectionTitle>
     <div className="space-y-8">
       {experiences.map((exp, i) => (
         <div key={i} className="relative pl-8 border-l border-border/60">

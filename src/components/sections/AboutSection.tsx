@@ -1,113 +1,209 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionTitle from "@/components/SectionTitle";
-import { MapPin } from "lucide-react";
 import flowVideo from "@/assets/manhattan_flow.mp4";
 
-const AboutSection = () => (
-  <SectionWrapper id="about" variant="band">
-    <SectionTitle>About Me</SectionTitle>
+const AboutSection = () => {
+  const timelineEvents = [
+    {
+      year: "2014",
+      city: "Naples",
+      institution: "University of Naples Federico II",
+      details: "Industrial engineering foundation",
+    },
+    {
+      year: "2019",
+      city: "Braga",
+      institution: "Universidade do Minho",
+      details: "International research track & Erasmus+",
+    },
+    {
+      year: "2021",
+      city: "Munich",
+      institution: "Technical University of Munich",
+      details: "Ph.D. launch in operations research",
+    },
+    {
+      year: "2025",
+      city: "Montreal",
+      institution: "Polytechnique Montréal",
+      details: "Advanced transportation optimization",
+    },
+    {
+      year: "2026",
+      city: "Munich",
+      institution: "Technical University of Munich",
+      details: "Thesis completion",
+      current: true,
+    },
+  ];
 
-    <div className="flex flex-col md:flex-row gap-10 items-start">
-      {/* Left Column: Text Content */}
-      <div className="flex-1 max-w-none">
-        <div className="-mt-4 mb-4 flex items-center gap-2 text-sm text-foreground/60 font-sans">
-          <MapPin size={14} />
-          Munich, Germany
-        </div>
+  return (
+    <SectionWrapper id="about" variant="band">
+      <SectionTitle>My journey as an engineer & researcher</SectionTitle>
 
-        <div className="space-y-4 text-foreground/80 font-sans leading-[1.65] text-justify break-words [hyphens:auto]">
-          <p>
-            I began my academic journey in Naples, Italy, where I studied industrial engineering and worked as a research assistant on the control of complex networks under the supervision of{" "}
-            <a
-              href="https://scholar.google.de/citations?hl=it&user=xO0lRJIAAAAJ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-primary transition-colors"
-            >
-              Prof. Franco Garofalo
-            </a>. I then moved to Germany to pursue a Ph.D. at the Technical University of Munich under{" "}
-            <a
-              href="https://scholar.google.de/citations?user=umGuS18AAAAJ&hl=it&oi=ao"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-primary transition-colors"
-            >
-              Prof. Maximilian Schiffer
-            </a>'s supervision, where I shifted my focus toward operations research and mobility systems.
-          </p>
+      {/* Lean Line Timeline */}
+      <div className="-mt-2 mb-14 relative px-4 hidden md:block">
+        {/* Continuous Structural Track Line */}
+        <div className="absolute top-[29px] left-8 right-8 h-[2px] bg-slate-200/80" />
 
-          <p>
-            During my graduate studies, I became actively involved in the international OR community, presenting my work at major conferences and publishing in leading journals. I also worked as a visiting researcher at Polytechnique Montréal, where I collaborated with{" "}
-            <a
-              href="https://scholar.google.de/citations?hl=it&user=CilK624AAAAJ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-primary transition-colors"
-            >
-              Prof. Michel Gendreau
-            </a>, further broadening my perspective on transportation optimization. In parallel, I have been engaged in teaching and thesis supervision, as well as collaborating with industry partners on real-world mobility applications.
-          </p>
+        <div className="grid grid-cols-5 relative z-10">
+          {timelineEvents.map((evt) => (
+            <div key={`${evt.year}-${evt.city}-${evt.details}`} className="flex flex-col items-center text-center group">
+              {/* Year Label */}
+              <span className="text-xs font-bold font-sans tracking-wider text-slate-400 group-hover:text-primary transition-colors mb-2.5">
+                {evt.year}
+              </span>
+
+              {/* Dynamic Timeline Node Indicator */}
+              <div className="relative flex items-center justify-center mb-4">
+                <div
+                  className={`h-3 w-3 rounded-full border-2 transition-all duration-300 ${evt.current
+                    ? "bg-primary border-primary ring-4 ring-primary/20 scale-125"
+                    : "bg-white border-slate-300 group-hover:border-slate-500"
+                    }`}
+                />
+              </div>
+
+              {/* Text Description Stack */}
+              <div className="space-y-1 px-2">
+                <div>
+                  <h5 className={`text-sm font-bold font-sans inline-block ${evt.current ? "text-primary" : "text-slate-800"}`}>
+                    {evt.city}
+                  </h5>
+                  <p className="text-[10px] font-sans font-medium text-slate-400 leading-tight line-clamp-1 max-w-[150px] mx-auto mt-0.5">
+                    {evt.institution}
+                  </p>
+                </div>
+                <p className="text-[11px] text-slate-500 font-sans leading-tight max-w-[140px] mx-auto pt-0.5 border-t border-slate-100">
+                  {evt.details}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Right Column: Visualization */}
-      {/* Right Column: Visualization */}
-      <div className="hidden md:block w-full md:w-56 flex-shrink-0 self-start">
-        <div className="overflow-hidden rounded-xl border border-primary/10 shadow-md bg-muted/20 p-1.5">
-          <div className="group grayscale hover:grayscale-0 transition-all duration-700">
-            {/* Use relative positioning for the legend overlay */}
-            <div className="relative aspect-[16/9] md:aspect-[3/4] overflow-hidden rounded-lg">
-              <video
-                src={flowVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover scale-110"
-              />
-
-              <div className="absolute bottom-2 right-2 px-2 py-1.5 bg-background/80 backdrop-blur-[1px] rounded-lg border border-border/40 z-10 flex flex-col gap-0.5 font-sans">
-                {[
-                  { color: "bg-orange-400", label: "passenger" },
-                  { color: "bg-blue-600", label: "pickup" },
-                  { color: "bg-green-600", label: "rebalancing" },
-                  { color: "bg-red-500", label: "idle" },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-1.5 leading-none">
-                    <span className={`w-1.5 h-1.5 rounded-full ${item.color} flex-shrink-0`} />
-                    <span className="text-[9px] text-foreground/90 font-medium tracking-tight">
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
+      {/* Clean Fallback List Layout (Mobile Only) */}
+      <div className="md:hidden -mt-2 mb-10 space-y-5 border-l-2 border-slate-200/80 ml-4 pl-4 relative">
+        {timelineEvents.map((evt) => (
+          <div key={`${evt.year}-${evt.city}-${evt.details}`} className="relative">
+            <div
+              className={`absolute -left-[23px] top-1 h-2.5 w-2.5 rounded-full border-2 bg-white ${evt.current ? "border-primary bg-primary" : "border-slate-300"
+                }`}
+            />
+            <div className="flex flex-col gap-0.5">
+              <div className="flex items-baseline gap-2">
+                <span className="text-xs font-bold font-sans text-slate-400">{evt.year}</span>
+                <h5 className={`text-sm font-bold font-sans ${evt.current ? "text-primary" : "text-slate-800"}`}>
+                  {evt.city}
+                </h5>
+                <span className="text-[10px] font-sans text-slate-400 font-medium">
+                  • {evt.institution}
+                </span>
               </div>
+              <p className="text-xs text-slate-500 font-sans leading-snug">{evt.details}</p>
             </div>
+          </div>
+        ))}
+      </div>
 
-            {/* Thinner, tighter label area */}
-            <div className="py-2 mt-1">
-              <p className="text-[9px] uppercase tracking-[0.15em] text-center text-foreground/40 font-sans font-bold">
-                Manhattan Flow Simulation
-              </p>
+      <div className="flex flex-col md:flex-row gap-10 items-start">
+        {/* Left Column: Text Content */}
+        <div className="flex-1 max-w-none">
+          <div className="space-y-4 text-foreground/80 font-sans leading-[1.65] text-justify break-words [hyphens:auto]">
+            <p>
+              My engineering journey began in Naples, Italy, where I worked on the mathematical control of complex networks alongside{" "}
+              <a
+                href="https://scholar.google.de/citations?hl=it&user=xO0lRJIAAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-primary transition-colors font-medium"
+              >
+                Prof. Franco Garofalo
+              </a>
+              . Motivated by an interest in large-scale operational problems, I moved to Germany to pursue a Ph.D. at the Technical University of Munich with{" "}
+              <a
+                href="https://scholar.google.de/citations?user=umGuS18AAAAJ&hl=it&oi=ao"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-primary transition-colors font-medium"
+              >
+                Prof. Maximilian Schiffer
+              </a>
+              , where I specialized in scalable optimization algorithms for high-dimensional mobility and logistics systems.
+            </p>
+
+            <p>
+              During my doctoral studies, I actively contributed to the international Operations Research community through conference presentations and journal publications. I also worked as a visiting researcher at Polytechnique Montréal, collaborating with{" "}
+              <a
+                href="https://scholar.google.de/citations?hl=it&user=CilK624AAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-primary transition-colors"
+              >
+                Prof. Michel Gendreau
+              </a>
+              , where I expanded my focus on large-scale transportation optimization and algorithmic decision-making. Alongside research, I gained experience in teaching, thesis supervision, and applied collaborations with industry partners on real-world mobility systems.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Column: Visualization */}
+        <div className="hidden md:block w-full md:w-56 flex-shrink-0 self-start">
+          <div className="overflow-hidden rounded-xl border border-primary/10 shadow-md bg-muted/20 p-1.5">
+            <div className="group grayscale hover:grayscale-0 transition-all duration-700">
+              <div className="relative aspect-[16/9] md:aspect-[3/4] overflow-hidden rounded-lg">
+                <video
+                  src={flowVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover scale-110"
+                />
+
+                <div className="absolute bottom-2 right-2 px-2 py-1.5 bg-white rounded-lg border border-border/80 shadow-sm z-10 flex flex-col gap-0.5 font-sans">
+                  {[
+                    { color: "bg-orange-400", label: "passenger" },
+                    { color: "bg-blue-600", label: "pickup" },
+                    { color: "bg-green-600", label: "rebalancing" },
+                    { color: "bg-red-500", label: "idle" },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-1.5 leading-none">
+                      <span className={`w-1.5 h-1.5 rounded-full ${item.color} flex-shrink-0`} />
+                      <span className="text-[9px] text-slate-700 font-semibold tracking-tight">
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="py-2 mt-1">
+                <p className="text-[9px] uppercase tracking-[0.15em] text-center text-foreground/40 font-sans font-bold">
+                  Manhattan Flow Simulation
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div className="mt-5 p-4 rounded-lg bg-background border border-border">
-      <p className="text-xs font-sans uppercase tracking-wider text-foreground/50 mb-1">
-        Fun fact
-      </p>
-      <div className="text-sm text-foreground/70 font-sans italic flex flex-col gap-1">
-        <span>
-          Outside research, I am the frontman of a rock band, where I explore a more creative and expressive side of my personality.
-        </span>
-        <span>
-          I truly enjoy the process of writing music, performing and connecting with audiences.
-        </span>
+      <div className="mt-5 p-4 rounded-lg bg-background border border-border">
+        <p className="text-xs font-sans uppercase tracking-wider text-foreground/50 mb-1">
+          Fun fact
+        </p>
+        <div className="text-sm text-foreground/70 font-sans italic flex flex-col gap-1">
+          <span>
+            Outside research, I am the frontman of a rock band, where I explore a more creative and expressive side of my personality.
+          </span>
+          <span>
+            I truly enjoy the process of writing music, performing and connecting with audiences.
+          </span>
+        </div>
       </div>
-    </div>
-  </SectionWrapper>
-);
+    </SectionWrapper>
+  );
+};
 
 export default AboutSection;

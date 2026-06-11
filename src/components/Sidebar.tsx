@@ -12,9 +12,9 @@ const links = [
 const navItems = [
   { label: "Home", href: "/#hero" },
   { label: "About", href: "/#about" },
-  { label: "Research", href: "/#research" },
   { label: "Experience", href: "/#experience" },
   { label: "Education", href: "/#education" },
+  { label: "Research", href: "/#research" },
   { label: "Talks", href: "/#talks" },
   { label: "Awards", href: "/#awards" },
   { label: "Skills", href: "/#skills" },
