@@ -19,9 +19,9 @@ const HeroSection = () => (
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-stretch gap-10 lg:gap-14 -mt-5">
+      <div className="flex flex-col md:flex-row items-stretch gap-10 lg:gap-14 -mt-7">
         {/* Profile image (desktop) */}
-        <div className="hidden md:block flex-shrink-0 w-52 md:w-64 mx-auto md:mx-0">
+        <div className="hidden md:block flex-shrink-0 w-52 md:w-64 mx-auto md:mx-0 -mt-1">
           <img
             src={profileImg}
             alt="Antonio Coppola"
@@ -30,7 +30,7 @@ const HeroSection = () => (
         </div>
 
         {/* Content */}
-        <div className="flex-1 flex flex-col justify-between text-center md:text-left">
+        <div className="-mt-2 flex-1 flex flex-col justify-between text-center md:text-left">
           <div className="max-w-[530px] md:-ml-9 text-foreground/80 font-sans leading-relaxed text-left md:text-justify [hyphens:auto] break-words">
             <p>
               I am an Optimization Engineer with +4 years of experience, working in the field of Operations Research.
@@ -38,25 +38,25 @@ const HeroSection = () => (
               leveraging combinatorial optimization, machine learning, and artificial intelligence as core methodologies.
             </p>
 
-            <p className="mt-4">
+            <p className="mt-2">
               My recent work has focused on large-scale transportation and mobility systems,
               where I design optimization models and decision-support tools for real-world operational challenges.
               Beyond mobility, my expertise extends to other domains, such as resource allocation, scheduling, routing, network design and strategic planning.
             </p>
 
-            <p className="mt-4">
+            <p className="mt-2">
               I focus on bridging theory and practice by translating advanced mathematical models into robust software systems.
               From algorithm design and experimentation to deployment, I build solutions that are both efficient and aligned
               with real-world constraints and operational requirements.</p>
 
-            <p className="mt-5 text-sm font-medium border-l-2 border-primary/30 pl-4 italic">
+            <p className="mt-2 -mb-2 text-sm font-medium border-l-2 border-primary/30 pl-4 italic">
               I’m always open to research collaborations, industry opportunities, or simply connecting to share ideas. Feel free to reach out!
             </p>
 
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-3 mt-8 justify-center md:justify-start md:-ml-9">
+          <div className="flex flex-wrap gap-3 mt-5 justify-center md:justify-start md:-ml-9">
             <a href={cvFile} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
