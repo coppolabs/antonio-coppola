@@ -30,7 +30,7 @@ const SkillsSection = () => {
   return (
     <SectionWrapper id="skills" variant="band" className="py-16 md:py-14">
       <div className="-mt-14 space-y-8">
-        <SectionTitle>Skills and toolkit</SectionTitle>
+        <SectionTitle>Skills & Toolkit</SectionTitle>
 
         <div className="divide-y divide-border/30 space-y-6">
           {/* Core Technical Capabilities */}

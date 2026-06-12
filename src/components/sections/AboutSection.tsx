@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionTitle from "@/components/SectionTitle";
 import flowVideo from "@/assets/manhattan_flow.mp4";
@@ -37,11 +38,16 @@ const AboutSection = () => {
     },
   ];
 
+  // Track the selected event on mobile (defaults to the current/latest event)
+  const [activeIndex, setActiveIndex] = useState(
+    timelineEvents.findIndex((evt) => evt.current) ?? 0
+  );
+
   return (
     <SectionWrapper id="about" variant="band">
-      <SectionTitle>My journey as an engineer & researcher</SectionTitle>
+      <SectionTitle>My Journey as an Engineer & Researcher</SectionTitle>
 
-      {/* Lean Line Timeline */}
+      {/* Lean Line Timeline (Desktop Only) */}
       <div className="-mt-2 mb-14 relative px-4 hidden md:block">
         {/* Continuous Structural Track Line */}
         <div className="absolute top-[29px] left-8 right-8 h-[2px] bg-slate-200/80" />
@@ -83,28 +89,68 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Clean Fallback List Layout (Mobile Only) */}
-      <div className="md:hidden -mt-2 mb-10 space-y-5 border-l-2 border-slate-200/80 ml-4 pl-4 relative">
-        {timelineEvents.map((evt) => (
-          <div key={`${evt.year}-${evt.city}-${evt.details}`} className="relative">
-            <div
-              className={`absolute -left-[23px] top-1 h-2.5 w-2.5 rounded-full border-2 bg-white ${evt.current ? "border-primary bg-primary" : "border-slate-300"
-                }`}
-            />
-            <div className="flex flex-col gap-0.5">
-              <div className="flex items-baseline gap-2">
-                <span className="text-xs font-bold font-sans text-slate-400">{evt.year}</span>
-                <h5 className={`text-sm font-bold font-sans ${evt.current ? "text-primary" : "text-slate-800"}`}>
-                  {evt.city}
-                </h5>
-                <span className="text-[10px] font-sans text-slate-400 font-medium">
-                  • {evt.institution}
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 font-sans leading-snug">{evt.details}</p>
-            </div>
+      {/* Interactive Horizontal Timeline (Mobile Only) */}
+      <div className="md:hidden -mt-2 mb-10 w-full">
+        {/* Track Line Container */}
+        <div className="relative mb-6 px-4">
+          {/* Track Line */}
+          <div className="absolute top-[29px] left-8 right-8 h-[2px] bg-slate-200/80" />
+
+          <div className="grid grid-cols-5 relative z-10 w-full">
+            {timelineEvents.map((evt, idx) => {
+              const isSelected = activeIndex === idx;
+              return (
+                <button
+                  key={`${evt.year}-${evt.city}`}
+                  onClick={() => setActiveIndex(idx)}
+                  className="flex flex-col items-center text-center focus:outline-none"
+                >
+                  <span className={`text-[11px] font-bold font-sans tracking-wider transition-colors mb-2.5 ${isSelected ? "text-primary font-extrabold" : "text-slate-400"
+                    }`}>
+                    {evt.year}
+                  </span>
+
+                  <div className="relative flex items-center justify-center">
+                    <div
+                      className={`h-3 w-3 rounded-full border-2 transition-all duration-300 ${isSelected
+                        ? "bg-primary border-primary ring-4 ring-primary/20 scale-125"
+                        : evt.current
+                          ? "bg-white border-primary"
+                          : "bg-white border-slate-300"
+                        }`}
+                    />
+                  </div>
+                </button>
+              );
+            })}
           </div>
-        ))}
+        </div>
+
+        {/* Info Card Display for Selected Event */}
+        <div className="relative mx-4 p-4 rounded-xl border border-slate-200/60 bg-white shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300">
+
+          {/* Dynamic Spike / Arrow Pointer */}
+          <div
+            className="absolute -top-1.5 h-3 w-3 rotate-45 border-t border-l border-slate-200/60 bg-white transition-all duration-300"
+            style={{
+              left: `calc(${(activeIndex * 20) + 10}% - 6px)`
+            }}
+          />
+
+          {/* 3-Line Structured Text Content */}
+          <div className="flex flex-col gap-1 text-left font-sans relative z-10">
+            <h5 className={`text-sm font-bold tracking-wide uppercase text-[11px] ${timelineEvents[activeIndex].current ? "text-primary" : "text-slate-800"
+              }`}>
+              {timelineEvents[activeIndex].city}
+            </h5>
+            <p className="text-xs font-semibold text-slate-500 leading-tight">
+              {timelineEvents[activeIndex].institution}
+            </p>
+            <p className="text-xs text-slate-600 leading-relaxed mt-0.5 font-normal">
+              {timelineEvents[activeIndex].details}
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row gap-10 items-start">

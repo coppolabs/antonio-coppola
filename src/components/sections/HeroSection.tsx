@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import profileImg from "@/assets/profile.png";
 import cvFile from "@/assets/AC_CV.pdf";
 
+
 const HeroSection = () => (
   <section
     id="hero"
@@ -14,9 +15,15 @@ const HeroSection = () => (
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
           Antonio Coppola
         </h1>
-        <p className="text-base md:text-lg text-primary mt-3 font-sans font-medium uppercase tracking-[0.08em] md:tracking-wide">
-          Optimization Engineer | Operations Research | Artificial Intelligence
-        </p>
+        <div className="text-base md:text-lg text-primary mt-3 font-sans 
+        font-medium uppercase tracking-[0.08em] md:tracking-wide flex flex-col
+         md:flex-row md:items-center justify-center md:justify-start gap-1 md:gap-3">
+          <span>Optimization Engineer</span>
+          <span className="hidden md:inline text-primary/40">•</span>
+          <span>Operations Research</span>
+          <span className="hidden md:inline text-primary/40">•</span>
+          <span>Artificial Intelligence</span>
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row items-stretch gap-10 lg:gap-14 -mt-7">
@@ -31,7 +38,8 @@ const HeroSection = () => (
 
         {/* Content */}
         <div className="-mt-2 flex-1 flex flex-col justify-between text-center md:text-left">
-          <div className="max-w-[530px] md:-ml-9 text-foreground/80 font-sans leading-relaxed text-left md:text-justify [hyphens:auto] break-words">
+          {/* Strictly text-justify on all viewpoints now */}
+          <div className="max-w-[530px] md:-ml-9 text-foreground/80 font-sans leading-relaxed text-justify [hyphens:auto] break-words">
             <p>
               I am an Optimization Engineer with +4 years of experience, working in the field of Operations Research.
               I design and implement advanced algorithms for complex decision-making under uncertainty,
@@ -79,8 +87,8 @@ const HeroSection = () => (
           </div>
 
           {/* Mobile Image */}
-          <div className="mt-6 mb-4 md:hidden flex justify-center">
-            <div className="w-12">
+          <div className="mt-8 mb-4 md:hidden flex justify-center w-full">
+            <div className="w-full max-w-[340px]">
               <img
                 src={profileImg}
                 alt="Antonio Coppola"
