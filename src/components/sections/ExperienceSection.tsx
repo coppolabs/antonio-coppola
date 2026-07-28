@@ -3,7 +3,7 @@ import SectionTitle from "@/components/SectionTitle";
 
 const experiences = [
   {
-    position: "Optimization Engineer — Combinatorial Optimization & ML (Ph.D. Candidate, Mobility AI)",
+    position: "Optimization Engineer — Mobility AI",
     org: (
       <>
         Technical University of Munich • Supervised by{" "}

@@ -6,7 +6,7 @@ import { GraduationCap } from "lucide-react";
 
 const education = [
   {
-    degree: "Ph.D. in Operations Research (Candidate)",
+    degree: "Ph.D. in Operations Research",
     institution: "**Technical University of Munich**, Germany",
     dates: "2022 – 2026",
     details: "Thesis: “Balanced and Staggered Routing in Autonomous Mobility-on-Demand Systems”",

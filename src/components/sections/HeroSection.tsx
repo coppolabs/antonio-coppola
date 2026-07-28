@@ -13,7 +13,7 @@ const HeroSection = () => (
       {/* Header */}
       <div className="mb-10 text-center md:text-left">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-          Antonio Coppola
+          Antonio Coppola, Ph.D.
         </h1>
         <div className="text-base md:text-lg text-primary mt-3 font-sans 
         font-medium uppercase tracking-[0.08em] md:tracking-wide flex flex-col
@@ -41,15 +41,15 @@ const HeroSection = () => (
           {/* Strictly text-justify on all viewpoints now */}
           <div className="max-w-[530px] md:-ml-9 text-foreground/80 font-sans leading-relaxed text-justify [hyphens:auto] break-words">
             <p>
-              I am an Optimization Engineer with +4 years of experience, working in the field of Operations Research.
-              I design and implement advanced algorithms for complex decision-making under uncertainty,
+              I am an Optimization Engineer with a Ph.D. in Operations Research and Machine Learning and +4 years of experience
+              designing and implementing advanced algorithms for complex decision-making under uncertainty,
               leveraging combinatorial optimization, machine learning, and artificial intelligence as core methodologies.
             </p>
 
             <p className="mt-2">
-              My recent work has focused on large-scale transportation and mobility systems,
+              My doctoral and applied work has focused on large-scale transportation and mobility systems,
               where I design optimization models and decision-support tools for real-world operational challenges.
-              Beyond mobility, my expertise extends to other domains, such as resource allocation, scheduling, routing, network design and strategic planning.
+              Beyond mobility, my expertise extends to resource allocation, scheduling, routing, network design, and strategic planning.
             </p>
 
             <p className="mt-2">

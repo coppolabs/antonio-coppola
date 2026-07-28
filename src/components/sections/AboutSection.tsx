@@ -15,26 +15,26 @@ const AboutSection = () => {
       year: "2019",
       city: "Braga",
       institution: "Universidade do Minho",
-      details: "International research track & Erasmus+",
+      details: "International exchange, Erasmus+",
     },
     {
       year: "2021",
       city: "Munich",
       institution: "Technical University of Munich",
-      details: "Ph.D. launch in operations research",
+      details: "Ph.D. Launch",
     },
     {
       year: "2025",
       city: "Montreal",
       institution: "Polytechnique Montréal",
-      details: "Advanced transportation optimization",
+      details: "Transportation optimization research",
     },
     {
       year: "2026",
       city: "Munich",
       institution: "Technical University of Munich",
-      details: "Thesis completion",
-      current: true,
+      details: "Ph.D. awarded",
+      current: "true"
     },
   ];
 
@@ -153,12 +153,13 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-10 items-start">
+      <div className="flex flex-col md:flex-row gap-10 items-start -mt-7">
         {/* Left Column: Text Content */}
         <div className="flex-1 max-w-none">
-          <div className="space-y-4 text-foreground/80 font-sans leading-[1.65] text-justify break-words [hyphens:auto]">
+          <div className="space-y-3 text-foreground/80 font-sans leading-[1.65] text-justify break-words [hyphens:auto]">
             <p>
-              My engineering journey began in Naples, Italy, where I worked on the mathematical control of complex networks alongside{" "}
+              My engineering journey began in Naples, Italy, where I completed my undergraduate studies in Industrial Engineering,
+              and worked on the mathematical control of complex networks alongside{" "}
               <a
                 href="https://scholar.google.de/citations?hl=it&user=xO0lRJIAAAAJ"
                 target="_blank"
@@ -167,7 +168,7 @@ const AboutSection = () => {
               >
                 Prof. Franco Garofalo
               </a>
-              . Motivated by an interest in large-scale operational problems, I moved to Germany to pursue a Ph.D. at the Technical University of Munich with{" "}
+              . Driven by a growing interest in large-scale operational problems, I moved to Germany to pursue a Ph.D. at the Technical University of Munich with{" "}
               <a
                 href="https://scholar.google.de/citations?user=umGuS18AAAAJ&hl=it&oi=ao"
                 target="_blank"
@@ -176,11 +177,10 @@ const AboutSection = () => {
               >
                 Prof. Maximilian Schiffer
               </a>
-              , where I specialized in scalable optimization algorithms for high-dimensional mobility and logistics systems.
+              , where I specialized in scalable optimization algorithms for future mobility systems.
             </p>
-
             <p>
-              During my doctoral studies, I actively contributed to the international Operations Research community through conference presentations and journal publications. I also worked as a visiting researcher at Polytechnique Montréal, collaborating with{" "}
+              Over the years, I tested these methods on real operational problems and shared the results with peers in the field. I spent a period as a visiting researcher at Polytechnique Montréal with{" "}
               <a
                 href="https://scholar.google.de/citations?hl=it&user=CilK624AAAAJ"
                 target="_blank"
@@ -189,13 +189,16 @@ const AboutSection = () => {
               >
                 Prof. Michel Gendreau
               </a>
-              , where I expanded my focus on large-scale transportation optimization and algorithmic decision-making. Alongside research, I gained experience in teaching, thesis supervision, and applied collaborations with industry partners on real-world mobility systems.
+              , focused on deepening my knowledge of large-scale transportation optimization.
+            </p>
+            <p>
+              I completed my Ph.D. in 2026. Alongside this, I taught courses, supervised Master's theses, and worked directly with industry partners, deploying my solutions in real-world mobility systems.
             </p>
           </div>
         </div>
 
         {/* Right Column: Visualization */}
-        <div className="hidden md:block w-full md:w-56 flex-shrink-0 self-start">
+        <div className="hidden md:block w-full md:w-64 flex-shrink-0 self-start">
           <div className="overflow-hidden rounded-xl border border-primary/10 shadow-md bg-muted/20 p-1.5">
             <div className="group grayscale hover:grayscale-0 transition-all duration-700">
               <div className="relative aspect-[16/9] md:aspect-[3/4] overflow-hidden rounded-lg">
@@ -235,13 +238,13 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className="mt-5 p-4 rounded-lg bg-background border border-border">
+      <div className="mt-5 p-4 rounded-lg bg-background border border-border text-center">
         <p className="text-xs font-sans uppercase tracking-wider text-foreground/50 mb-1">
           Fun fact
         </p>
-        <div className="text-sm text-foreground/70 font-sans italic flex flex-col gap-1">
+        <div className="text-sm text-foreground/70 font-sans italic flex flex-col gap-1 items-center">
           <span>
-            Outside research, I am the frontman of a rock band, where I explore a more creative and expressive side of my personality.
+            I am the frontman of a rock band, where I explore a more creative and expressive side of my personality.
           </span>
           <span>
             I truly enjoy the process of writing music, performing and connecting with audiences.
