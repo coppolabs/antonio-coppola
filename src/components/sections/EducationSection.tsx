@@ -32,7 +32,7 @@ const education = [
 ];
 
 const EducationSection = () => (
-  <SectionWrapper id="education">
+  <SectionWrapper id="education" variant="band">
     <SectionTitle>Education</SectionTitle>
 
     <div className="mt-8 space-y-8">

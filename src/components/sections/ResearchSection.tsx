@@ -1,10 +1,12 @@
 import { useState } from "react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionTitle from "@/components/SectionTitle";
-import { FileText, Code, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import { FileText, Code, ExternalLink, ChevronDown, ChevronUp, Presentation } from "lucide-react";
 import StaggeredRouting from "@/assets/papers/staggered_routing.pdf";
 import IntegBalStag from "@/assets/papers/integ_bal_stag_arxiv.pdf";
 import LCSS21Unilaral from "@/assets/papers/LCSS_21_unilateral.pdf";
+import PhDThesisPdf from "@/assets/papers/AC_phd_thesis.pdf";
+import PhDThesisSlides from "@/assets/papers/AC_defense_presentation.pdf";
 import flowVideo from "@/assets/manhattan_flow.mp4";
 
 interface Publication {
@@ -15,7 +17,18 @@ interface Publication {
   pdfHref?: string;
   codeHref?: string;
   pageHref?: string;
+  slidesHref?: string;
 }
+
+const thesis: Publication = {
+  title: "Balanced and Staggered Routing in Autonomous Mobility-on-Demand Systems",
+  authors: "Antonio Coppola",
+  venue: "Ph.D. Thesis, Technical University of Munich, 2026",
+  abstract:
+    "Autonomous mobility-on-demand (AMoD) systems redefine urban ride-hailing by replacing decentralized driver decisions with centrally coordinated fleets of self-driving vehicles. Centralized control enables system-level optimization of routing and departure decisions, offering the potential to enhance vehicle utilization, reduce operating costs, and alleviate congestion compared to traditional ride-hailing services. However, realizing these gains requires routing algorithms that coordinate large-scale fleets across space and time under demand uncertainty and evolving traffic conditions, all while remaining computationally tractable for real-world urban networks. This thesis develops a unified optimization framework for the spatiotemporal coordination of AMoD operations, structured around two complementary mechanisms: balanced and staggered routing. The framework builds on a discretized adaptation of Vickrey's bottleneck model, capturing the essential dynamics of congestion propagation and vehicle interactions. The analysis progresses from offline planning with perfect information to real-time control under uncertainty, incrementally increasing both modeling fidelity and operational realism. The first part establishes the methodological foundation by introducing and analyzing staggered routing as a mechanism for temporal coordination along fixed routes, formulating the problem as a mixed-integer linear program and developing a scalable matheuristic. A first case study on the Manhattan network demonstrates that temporal coordination substantially reduces traffic delays and improves network efficiency. Building on these insights, the second part integrates balanced and staggered routing into a unified framework for jointly optimizing vehicle routes and departure times, developing a metaheuristic based on large neighborhood search to address city-wide combinatorial complexity. A second case study reveals that spatial load balancing and temporal staggering serve complementary functions, with their joint application yielding delay reductions that closely approximate the combined potential of both mechanisms, benefits that persist in mixed-traffic settings. The final part addresses real-time AMoD operations under stochastic and evolving demand, resolving the sequential decision-making challenge through an optimization-augmented learning pipeline that couples prediction with decision-making. Numerical experiments show that the framework recovers a substantial share of offline coordination gains when deployed online, offering a scalable pathway toward efficient autonomous urban mobility.",
+  pdfHref: PhDThesisPdf,
+  slidesHref: PhDThesisSlides,
+};
 
 const publications: Publication[] = [
   {
@@ -65,18 +78,16 @@ const PublicationItem = ({ pub }: { pub: Publication }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="py-6 border-b border-border last:border-b-0">
+    <div className="py-4 border-b border-border last:border-b-0">
       <h4 className="font-sans font-semibold text-foreground text-base leading-snug break-words">
         {pub.title}
       </h4>
-      {/* Added break-words and hyphens for author list */}
       <p className="text-sm text-meta font-sans mt-1 break-words [hyphens:auto]">
         {pub.authors}
       </p>
       <p className="text-sm text-meta font-sans italic mt-0.5">{pub.venue}</p>
 
       <div className="mt-3">
-        {/* Added break-words and hyphens for Abstract */}
         <p
           className={`text-sm text-foreground/70 font-sans text-justify leading-relaxed break-words [hyphens:auto] transition-all ${expanded ? "" : "line-clamp-3"
             }`}
@@ -104,6 +115,18 @@ const PublicationItem = ({ pub }: { pub: Publication }) => {
           >
             <FileText size={14} />
             PDF
+          </a>
+        )}
+
+        {pub.slidesHref && (
+          <a
+            href={pub.slidesHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-sans font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            <Presentation size={14} />
+            Slides
           </a>
         )}
 
@@ -139,16 +162,23 @@ const ResearchSection = () => (
   <SectionWrapper id="research">
     <SectionTitle>Research & Publications</SectionTitle>
 
-    <h3 className="text-sm font-sans font-semibold text-meta uppercase tracking-wider mb-2">
+    <h3 className="text-sm font-sans font-semibold text-meta uppercase tracking-wider mb-1">
+      Ph.D. Thesis
+    </h3>
+    <div className="mb-6">
+      <PublicationItem pub={thesis} />
+    </div>
+    
+    <h3 className="text-sm font-sans font-semibold text-meta uppercase tracking-wider mb-1">
       Publications
     </h3>
-    <div className="mb-10">
+    <div className="mb-6">
       {publications.map((pub) => (
         <PublicationItem key={pub.title} pub={pub} />
       ))}
     </div>
 
-    <div className="md:hidden -mt-10 mb-10">
+    <div className="md:hidden -mt-10 mb-6">
       <div className="overflow-hidden rounded-xl border border-primary/10 shadow-sm bg-muted/20 p-1">
         <div className="group relative aspect-[16/9] overflow-hidden rounded-lg grayscale transition-all duration-500 hover:grayscale-0 active:grayscale-0">
           <video
@@ -186,7 +216,7 @@ const ResearchSection = () => (
     </div>
 
 
-    <h3 className="text-sm font-sans font-semibold text-meta uppercase tracking-wider mb-2">
+    <h3 className="text-sm font-sans font-semibold text-meta uppercase tracking-wider mb-1">
       Working Papers & Preprints
     </h3>
     <div>
